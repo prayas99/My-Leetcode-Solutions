@@ -10,6 +10,6 @@ class Solution:
             if s <= hold or hold == -1:
                 return helper(i + 1, s, k)
             else:
-                return max(helper(i + 1, hold, k), helper(i + 1, s, k - 1) + (s - hold))
+                return max(helper(i + 1, hold, k), helper(i + 1, -1, k - 1) + (s - hold))
         
         return helper()
