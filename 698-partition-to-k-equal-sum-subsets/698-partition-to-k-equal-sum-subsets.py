@@ -11,7 +11,7 @@ class Solution:
         nums.sort(reverse = True)
         def helper(i = 0):
             if i == n:
-                return len(Counter(subsets).values()) == 1
+                return len(Counter(subsets)) == 1
             seti = set()
             for j in range(len(subsets)):                
                 if subsets[j] in seti:
