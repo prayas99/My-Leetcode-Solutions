@@ -21,19 +21,17 @@ class Solution:
                         q.append((node, curr))
                     else:
                         for child in d[node]:
-                            if layer == t - 1 and child not in visited and child == target:
-                                res.append(curr*temp)
-                            if layer < t - 1 and child not in visited:
-                                q.append((child, temp*curr))
-                                visited.add(child)
+                            if child in visited:
+                                continue
+                            q.append((child, temp*curr))
+                            visited.add(child)
                 layer += 1
-            #print(res)
             for val, time in q:
                     if val == target:
                         res.append(time)
-            #print(res)
-            ans = 1
+                        
             if not res: return 0
+            ans = 1            
             for num in res:
                 ans *= (1/num)
             return ans
