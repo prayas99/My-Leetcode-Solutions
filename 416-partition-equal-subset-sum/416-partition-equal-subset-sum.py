@@ -11,6 +11,8 @@ class Solution:
                 return
             if i == n:
                 return box1 == box2
+            if box1 == box2:
+                return helper(i + 1, box1 + nums[i], box2)
             return helper(i + 1, box1 + nums[i], box2) or helper(i + 1, box1, box2 + nums[i])
         
         return helper()
