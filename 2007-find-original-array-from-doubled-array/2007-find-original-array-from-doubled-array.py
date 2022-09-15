@@ -17,7 +17,6 @@ class Solution:
                 res[i*2] -= 1
                 ans.append(i)
             else:
-                print(i, res)
                 return
         return ans
         
