@@ -12,10 +12,6 @@ class Solution:
                 res[i] -= 1
                 res[i//2] -= 1
                 ans.append(i//2)
-            elif res[i*2] > 0:
-                res[i] -= 1
-                res[i*2] -= 1
-                ans.append(i)
             else:
                 return
         return ans
