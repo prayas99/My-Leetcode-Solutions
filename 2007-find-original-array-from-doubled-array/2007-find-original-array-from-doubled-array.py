@@ -2,7 +2,7 @@ class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         if len(changed) % 2 != 0:
             return 
-        changed.sort()
+        changed.sort(reverse = True)
         res = Counter(changed)
         ans = []
         for i in changed:
