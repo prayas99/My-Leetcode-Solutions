@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
-        @lru_cache()
+        @lru_cache(None)
         def helper(root):
             if not root:
                 return 0
