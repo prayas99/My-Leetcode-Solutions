@@ -1,7 +1,7 @@
 class Solution:
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
         def check(word):
-            return word == word[::-1]
+            return word == word[::-1] # MUCH EFFICIENT THEN USING FOR LOOP
         d = {}
         for i, word in enumerate(words):
             d[word] = i
