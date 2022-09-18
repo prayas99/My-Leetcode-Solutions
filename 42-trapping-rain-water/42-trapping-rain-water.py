@@ -4,13 +4,13 @@ class Solution:
         water = [0]*n
         
         lmaxi = 0
-        for i in range(n):
-            lmaxi = max(lmaxi, height[i])
+        for i in range(n):            
             water[i] = lmaxi
+            lmaxi = max(lmaxi, height[i])
         
         rmaxi = 0
-        for j in range(n - 1, -1, -1):
+        for j in range(n - 1, -1, -1):            
+            water[j] = max(min(water[j], rmaxi) - height[j], 0)
             rmaxi = max(rmaxi, height[j])
-            water[j] = min(water[j], rmaxi) - height[j]
         
         return sum(water)
