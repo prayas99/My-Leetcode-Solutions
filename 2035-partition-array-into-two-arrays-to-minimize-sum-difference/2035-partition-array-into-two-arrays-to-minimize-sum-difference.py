@@ -17,9 +17,9 @@ class Solution:
             for x in left_combos:
                 y = half - x
                 idx = bisect.bisect_left(right_combos, y)
-                if idx < len(right_combos):
-                    left_sum = x + right_combos[idx]
-                    ans = min(ans, abs(total - 2*left_sum))
+                idx = min(idx, len(right_combos) - 1)
+                left_sum = x + right_combos[idx]
+                ans = min(ans, abs(total - 2*left_sum))
         
         return ans
             
