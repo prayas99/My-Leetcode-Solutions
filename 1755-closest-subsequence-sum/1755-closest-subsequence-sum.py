@@ -1,11 +1,7 @@
 class Solution:
     def minAbsDifference(self, nums: List[int], goal: int) -> int:
         n = len(nums)
-        k = n // 2
-        
-        #sumi = sum(nums)
-        
-        #res = min(abs(sumi - goal), abs(0 - goal))
+        k = (n + 1) // 2
         
         res = float('inf')
         
