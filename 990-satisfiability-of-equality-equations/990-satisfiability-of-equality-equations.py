@@ -19,12 +19,15 @@ class Solution:
                 if xx != yy:
                     parent[yy] = xx
                     
-        equations.sort(key = lambda x : x[1], reverse = True)
+        #equations.sort(key = lambda x : x[1], reverse = True)
+        
         for s in equations:
             if s[1] + s[2] == "==":
                 if union(s[0], s[-1], 1):
                     return
-            else:
+                
+        for s in equations:
+            if s[1] + s[2] == "!=":
                 if union(s[0], s[-1], 0):
                     return 
         return True
