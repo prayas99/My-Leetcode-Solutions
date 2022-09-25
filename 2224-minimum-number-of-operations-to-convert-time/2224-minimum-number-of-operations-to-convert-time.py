@@ -5,7 +5,7 @@ class Solution:
         tar = t_h*60 + t_m - c_h*60 - c_m
         res = 0
         for step in [60, 15, 5, 1]:
-            if tar > 0:
+            if tar >= step:
                 res += tar// step
                 tar %= step
         return res
