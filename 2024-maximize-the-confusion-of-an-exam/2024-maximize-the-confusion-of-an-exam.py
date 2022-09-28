@@ -8,7 +8,7 @@ class Solution:
             d[answerKey[r]] += 1
             maxi = max(maxi, d[answerKey[r]])
             window = r - l + 1
-            while l <= r and window - maxi > k:
+            if l <= r and window - maxi > k:
                 d[answerKey[l]] -= 1
                 l += 1
                 window = r - l + 1
