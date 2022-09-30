@@ -1,10 +1,10 @@
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
-        points.sort()
-        end = points[0][1]
+        heapq.heapify(points)
+        _, end = heapq.heappop(points)
         res = 1
-        for i in range(1, len(points)):
-            s, e = points[i]
+        while points:
+            s, e = heapq.heappop(points)
             if s > end:
                 res += 1
                 end = e
