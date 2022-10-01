@@ -17,4 +17,4 @@ class Solution:
                 j += 1
             return res % MOD
         
-        return helper() % MOD
+        return helper()
