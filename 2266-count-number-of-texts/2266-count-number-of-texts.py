@@ -6,7 +6,7 @@ class Solution:
                 return 3
             else:
                 return 2
-        @lru_cache
+        @lru_cache(None)
         def helper(i = 0):
             if i >= n:
                 return 1
