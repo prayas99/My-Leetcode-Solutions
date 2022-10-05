@@ -1,13 +1,9 @@
 class Solution:
-    def stoneGameVII(self, stones: List[int]) -> int:
-        @lru_cache(None)
-        def helper(i = 0, j = len(stones) - 1):
-            if i >= j:
-                return 0
-            if j - i == 1:
-                return max(stones[i], stones[j])
-            opt1 = min(stones[i + 1] + helper(i + 2, j), stones[j] + helper(i + 1, j - 1))
-            opt2 = min(stones[j - 1] + helper(i, j - 2), stones[i] + helper(i + 1, j - 1))
-            return max(opt1, opt2)
-        return helper()
-        
+    def stoneGameVII(self, s: List[int]) -> int:
+        dp = [[0] * len(s) for _ in range(len(s))]
+        p_sum = [0] + list(accumulate(s))
+        for i in range(len(s) - 2, -1, -1):
+            for j in range(i + 1, len(s)):
+                dp[i][j] = max(p_sum[j + 1] - p_sum[i + 1] - dp[i + 1][j], 
+                               p_sum[j] - p_sum[i] - dp[i][j - 1]);
+        return dp[0][len(s) - 1]
